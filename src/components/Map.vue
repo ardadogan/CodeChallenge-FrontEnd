@@ -21,7 +21,7 @@
                 directionsService: new google.maps.DirectionsService(),
                 directionsDisplay: new google.maps.DirectionsRenderer(),
                 startPoint: undefined,
-                endPoint: new google.maps.LatLng(this.lat,this.lng),
+                endPoint: this.lat && this.lng ? new google.maps.LatLng(this.lat,this.lng) : null,
             }
         },
         methods: {
@@ -40,7 +40,7 @@
                         const formatted = moment.utc(secs * 1000).format('HH:mm:ss');
                         bus.$emit('getDuration', {
                             duration: formatted,
-                            coords: {
+                            coords: { 
                                 lat: result.request.destination.location.lat(),
                                 lng: result.request.destination.location.lng()
                             }
@@ -79,8 +79,10 @@
             google.maps.event.addListenerOnce(this.map, 'idle', e=>{
                 this.addMarker(position, 0)
                 this.startPoint = position;
-                this.addMarker(this.endPoint, 1);
-                this.calcRoute();
+                if(this.endPoint){
+                    this.addMarker(this.endPoint, 1);
+                    this.calcRoute();   
+                }
             });
             this.directionsDisplay.setMap(this.map);
 
