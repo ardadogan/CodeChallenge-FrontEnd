@@ -1,29 +1,23 @@
-# challenge-client
+# Vuejs CodeChallenge Front-End
 
-## Project setup
+> Projenin çalışan halini http://arda.reactivers.com adresinden görüntüleyebilirsiniz.
+
+## Yükleme
+
 ```
+# install node_modules
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+# Çalışacağı adres: localhost:8080
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+# Projeyi build etmek için
 npm run build
-```
 
-### Run your tests
-```
+# Projeyi test etmek için
 npm run test
+
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Back-End Repo
+[Back-End Repo](https://github.com/ardadogan/CodeChallenge-BackEnd)
